@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label>This is our beautiful app to show places worth visiting</Label>
+        <Button Grid.Row="0" Width="100px" Height="50px" Name="CountryPageButton" Click="CountryPageButton_OnClick">Countries</Button>
+        <Button Grid.Row="1" Width="100px" Height="50px" Name="RegionPageButton" Click="RegionPageButton_OnClick">Regions</Button>
+        <Button Grid.Row="2" Width="100px" Height="50px" Name="PlacePageButton" Click="PlacePageButton_OnClick">Places</Button>
+        <Button Grid.Row="3" Width="100px" Height="50px" Name="Empty" Click="Empty_OnClick">Nothing</Button>
     </Grid>
 </Window>

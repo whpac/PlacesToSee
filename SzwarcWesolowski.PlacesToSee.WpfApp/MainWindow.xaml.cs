@@ -8,17 +8,44 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SzwarcWesolowski.PlacesToSee.BLC;
+using SzwarcWesolowski.PlacesToSee.Interfaces;
 
 namespace SzwarcWesolowski.PlacesToSee.WpfApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
+    public partial class MainWindow : Window {
+        private IDAO _dao;
         public MainWindow()
         {
+            var daoPath = @"SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.dll";
+            if (! ExternalDAOManager.IsInitialized)
+            {
+                ExternalDAOManager.Initialize(daoPath);
+            }
+            _dao = ExternalDAOManager.GetDAOInstance();
             InitializeComponent();
+        }
+
+
+        private void CountryPageButton_OnClick(object sender, RoutedEventArgs e) {
+            var countriesPage = new CountryWindow (_dao);
+            countriesPage.Show ();
+            this.Close ();
+        }
+
+        private void RegionPageButton_OnClick(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException ();
+        }
+
+        private void PlacePageButton_OnClick(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException ();
+        }
+
+        private void Empty_OnClick(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException ();
         }
     }
 }
