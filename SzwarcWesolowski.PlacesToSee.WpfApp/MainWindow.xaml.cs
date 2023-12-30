@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SzwarcWesolowski.PlacesToSee.BLC;
 using SzwarcWesolowski.PlacesToSee.Interfaces;
+using SzwarcWesolowski.PlacesToSee.WpfApp.Place;
 using SzwarcWesolowski.PlacesToSee.WpfApp.Region;
 
 namespace SzwarcWesolowski.PlacesToSee.WpfApp
@@ -44,11 +45,13 @@ namespace SzwarcWesolowski.PlacesToSee.WpfApp
         }
 
         private void PlacePageButton_OnClick(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException ();
+            var placesPage = new PlaceWindow (_dao);
+            placesPage.Show ();
+            Close ();
         }
 
         private void Empty_OnClick(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException ();
+            Close ();
         }
     }
 }

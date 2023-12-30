@@ -1,4 +1,6 @@
-﻿namespace SzwarcWesolowski.PlacesToSee.Interfaces
+﻿using SzwarcWesolowski.PlacesToSee.Core;
+
+namespace SzwarcWesolowski.PlacesToSee.Interfaces
 {
     public interface IDAO
     {
@@ -9,6 +11,10 @@
 
         // TODO: Determine the method parameters
         IPlace CreatePlace();
+        IPlace CreatePlace(string name);
+        IPlace CreatePlace(string name, PlaceType type, Coordinates location, ICountry country, IRegion region);
+        void AddPlace(IPlace item);
+        void RemovePlace(IPlace item);
         IRegion CreateRegion();
         IRegion CreateRegion(string name);
         void AddRegion(IRegion item);

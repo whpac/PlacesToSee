@@ -1,4 +1,5 @@
-﻿using SzwarcWesolowski.PlacesToSee.Interfaces;
+﻿using SzwarcWesolowski.PlacesToSee.Core;
+using SzwarcWesolowski.PlacesToSee.Interfaces;
 
 namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
 {
@@ -18,6 +19,33 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
         public IEnumerable<ICountry> GetCountries() => _countries;
 
         public IPlace CreatePlace() => new Place();
+        public IPlace CreatePlace(string name) {
+            var item = new Place {Name = name};
+            _places.Add (item);
+            return item;
+        }
+
+        public IPlace CreatePlace(string name, PlaceType type, Coordinates location, ICountry country, IRegion region) {
+            var item = new Place
+            {
+            Name = name,
+            Country = country,
+            Location = location,
+            PlaceType = type,
+            Region = region
+            };
+            _places.Add (item);
+            return item;
+        }
+
+        public void AddPlace(IPlace item) {
+            _places.Add ((Place) item);
+        }
+
+        public void RemovePlace(IPlace item) {
+            _places.Remove ((Place) item);
+        }
+
         public IRegion CreateRegion() => new Region();
         public IRegion CreateRegion(string name) {
             var item = new Region

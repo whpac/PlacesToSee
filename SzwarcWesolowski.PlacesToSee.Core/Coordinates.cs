@@ -17,5 +17,28 @@
             Latitude = latitude;
             Longitude = longitude;
         }
+
+        public override string ToString() {
+            string lat; string lon;
+            if (Latitude >= 0)
+            {
+                lat = Latitude + " N";
+            }
+            else
+            {
+                lat = Latitude * (-1) + " S";
+            }
+
+            if (Longitude >= 0)
+            {
+                lon = Longitude + " E";
+            }
+            else
+            {
+                lon = Longitude * (-1) + " W";
+            }
+
+            return lat + ", " + lon;
+        }
     }
 }

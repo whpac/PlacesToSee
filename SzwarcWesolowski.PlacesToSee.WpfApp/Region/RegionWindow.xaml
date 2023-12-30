@@ -13,7 +13,7 @@
             <RowDefinition Height="30px"></RowDefinition>
             <RowDefinition Height="30px"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Height="25px"> Country page</Label>
+        <Label Height="25px"> Regions page</Label>
         <ItemsControl x:Name="regions" Grid.Row="1">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>

@@ -14,5 +14,9 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
         public ICountry Country { get; set; }
 
         public IRegion Region { get; set; }
+
+        public void SetLocation(double lat, double lon) {
+            Location = new Coordinates (lat, lon);
+        }
     }
 }

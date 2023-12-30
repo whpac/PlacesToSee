@@ -1,4 +1,5 @@
-﻿using SzwarcWesolowski.PlacesToSee.Core;
+﻿using System.Reflection.PortableExecutable;
+using SzwarcWesolowski.PlacesToSee.Core;
 
 namespace SzwarcWesolowski.PlacesToSee.Interfaces
 {
@@ -10,5 +11,6 @@ namespace SzwarcWesolowski.PlacesToSee.Interfaces
 
         ICountry Country { get; }
         IRegion Region { get; }
+        void SetLocation(double lat, double lon);
     }
 }
