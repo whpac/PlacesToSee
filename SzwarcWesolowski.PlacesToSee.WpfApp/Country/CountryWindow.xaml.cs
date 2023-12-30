@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using SzwarcWesolowski.PlacesToSee.BLC;
 using SzwarcWesolowski.PlacesToSee.Interfaces;
+using SzwarcWesolowski.PlacesToSee.WpfApp.Country;
 
 namespace SzwarcWesolowski.PlacesToSee.WpfApp;
 
@@ -27,7 +28,10 @@ public partial class CountryWindow : Window {
     }
 
     private void Edit_OnClick(object sender, RoutedEventArgs e) {
-        Console.WriteLine ("Editing: nothing here");
+        var button = (Button) sender;
+        var editPage = new CountryEditWindow((ICountry) button.DataContext, _dao);
+        editPage.Show ();
+        this.Close ();
     }
 
     private void Delete_OnClick(object sender, RoutedEventArgs e) {
@@ -38,7 +42,8 @@ public partial class CountryWindow : Window {
     }
 
     private void New_OnClick(object sender, RoutedEventArgs e) {
-        _dao.CreateCountry ("Ukraina", "");
-        countries.Items.Refresh ();
+        var editPage = new CountryEditWindow(null, _dao);
+        editPage.Show ();
+        this.Close ();
     }
 }

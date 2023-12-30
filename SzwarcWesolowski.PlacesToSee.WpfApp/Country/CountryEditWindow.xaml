@@ -1,0 +1,32 @@
+﻿<Window x:Class="SzwarcWesolowski.PlacesToSee.WpfApp.Country.CountryEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SzwarcWesolowski.PlacesToSee.WpfApp.Country"
+        mc:Ignorable="d"
+        Title="CountryEditWindow" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Label >Country Editing Window</Label>
+        <Label Content="Name" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
+    
+        <Label Content="FlagUrl" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Text="{Binding FlagUrl}" Grid.Row="2" Grid.Column="1"/>
+    
+        <Button Content="Save" Click="SaveButton_Click" Grid.Row="4" Grid.Column="1"/>
+    </Grid>
+</Window>

@@ -19,13 +19,20 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
 
         public IPlace CreatePlace() => new Place();
         public IRegion CreateRegion() => new Region();
+        public ICountry CreateCountry() => new Country ();
         public ICountry CreateCountry(string name, string flagUrl) {
-            var country = new Country{
+            var item = new Country {
                 Name = name,
                 FlagUrl = flagUrl
             };
-            countries.Add (country);
-            return country;
+            countries.Add (item);
+            Console.WriteLine ("added object " + item);
+            return item;
+        }
+
+        public void AddCountry(ICountry item) {
+            countries.Add ((Country) item);
+            Console.WriteLine ("added object " + item);
         }
 
         public void RemoveCountry(ICountry item) {
