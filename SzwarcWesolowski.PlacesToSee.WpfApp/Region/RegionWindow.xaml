@@ -1,0 +1,33 @@
+﻿<Window x:Class="SzwarcWesolowski.PlacesToSee.WpfApp.Region.RegionWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:SzwarcWesolowski.PlacesToSee.WpfApp.Region"
+      mc:Ignorable="d"
+      Title="RegionPage" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30px"></RowDefinition>
+            <RowDefinition Height="30px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Height="25px"> Country page</Label>
+        <ItemsControl x:Name="regions" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" Margin="15"/>
+                        <TextBlock Text="{Binding PhotoUrl}" Margin="15"/>
+                        <Button Click="Edit_OnClick">Edit</Button>
+                        <Button Click="Delete_OnClick">Delete</Button>
+                    </StackPanel>
+                    
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button Height="25px" Grid.Row="2" Name="New" Click="New_OnClick">Add new country</Button>
+        <Button Height="25px" Grid.Row="3" Name="Return" Click="Return_OnClick">Back to main page</Button>
+    </Grid>
+</Window>

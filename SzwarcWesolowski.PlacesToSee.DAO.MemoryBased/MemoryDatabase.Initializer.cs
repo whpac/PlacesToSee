@@ -1,4 +1,5 @@
 ﻿using SzwarcWesolowski.PlacesToSee.Core;
+using SzwarcWesolowski.PlacesToSee.Interfaces;
 
 namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
 {
@@ -16,16 +17,16 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
                 Name = "Czechy",
                 FlagUrl = ""
             };
-            countries.AddRange([pl, cs]);
+            _countries.AddRange([pl, cs]);
 
             var bogatynia = new Region
             {
                 Name = "Okolice Bogatyni",
                 PhotoUrl = ""
             };
-            regions.AddRange([bogatynia]);
+            _regions.AddRange([bogatynia]);
 
-            places.Add(new Place
+            _places.Add(new Place
             {
                 Name = "Výhledy",
                 Country = cs,
@@ -33,7 +34,7 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
                 Region = bogatynia,
                 Location = new(50.861438, 14.964688)
             });
-            places.Add(new Place
+            _places.Add(new Place
             {
                 Name = "U Alchemika",
                 Country = pl,

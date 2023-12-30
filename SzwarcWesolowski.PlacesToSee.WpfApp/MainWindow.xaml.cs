@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SzwarcWesolowski.PlacesToSee.BLC;
 using SzwarcWesolowski.PlacesToSee.Interfaces;
+using SzwarcWesolowski.PlacesToSee.WpfApp.Region;
 
 namespace SzwarcWesolowski.PlacesToSee.WpfApp
 {
@@ -37,7 +38,9 @@ namespace SzwarcWesolowski.PlacesToSee.WpfApp
         }
 
         private void RegionPageButton_OnClick(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException ();
+            var regionsPage = new RegionWindow (_dao);
+            regionsPage.Show ();
+            Close ();
         }
 
         private void PlacePageButton_OnClick(object sender, RoutedEventArgs e) {
