@@ -8,24 +8,26 @@
         Title="CountryWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30px"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30px"></RowDefinition>
+            <RowDefinition Height="30px"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label> Country page</Label>
+        <Label Height="25px"> Country page</Label>
         <ItemsControl x:Name="countries" Grid.Row="1">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Name}" Margin="15"/>
                         <TextBlock Text="{Binding FlagUrl}" Margin="15"/>
-                        <Button>Edit</Button>
-                        <Button>Delete</Button>
+                        <Button Click="Edit_OnClick">Edit</Button>
+                        <Button Click="Delete_OnClick">Delete</Button>
                     </StackPanel>
                     
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <Button Grid.Row="2" Name="Return" Click="Return_OnClick">Back to main page</Button>
+        <Button Height="25px" Grid.Row="2" Name="New" Click="New_OnClick">Add new country</Button>
+        <Button Height="25px" Grid.Row="3" Name="Return" Click="Return_OnClick">Back to main page</Button>
     </Grid>
 </Window>

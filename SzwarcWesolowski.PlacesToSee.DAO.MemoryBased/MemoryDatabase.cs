@@ -19,6 +19,18 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
 
         public IPlace CreatePlace() => new Place();
         public IRegion CreateRegion() => new Region();
-        public ICountry CreateCountry() => new Country();
+        public ICountry CreateCountry(string name, string flagUrl) {
+            var country = new Country{
+                Name = name,
+                FlagUrl = flagUrl
+            };
+            countries.Add (country);
+            return country;
+        }
+
+        public void RemoveCountry(ICountry item) {
+            countries.Remove ((Country) item);
+            Console.WriteLine ("deleted object " + item);
+        }
     }
 }

@@ -10,6 +10,8 @@
         // TODO: Determine the method parameters
         IPlace CreatePlace();
         IRegion CreateRegion();
-        ICountry CreateCountry();
+        ICountry CreateCountry(string name, string flagUrl);
+
+        void RemoveCountry(ICountry item);
     }
 }

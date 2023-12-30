@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
 using SzwarcWesolowski.PlacesToSee.BLC;
 using SzwarcWesolowski.PlacesToSee.Interfaces;
 
@@ -22,5 +24,21 @@ public partial class CountryWindow : Window {
         var mainPage = new MainWindow ();
         mainPage.Show ();
         this.Close ();
+    }
+
+    private void Edit_OnClick(object sender, RoutedEventArgs e) {
+        Console.WriteLine ("Editing: nothing here");
+    }
+
+    private void Delete_OnClick(object sender, RoutedEventArgs e) {
+        var button = (Button) sender;
+        var item = (ICountry) button.DataContext;
+        _dao.RemoveCountry (item);
+        countries.Items.Refresh ();
+    }
+
+    private void New_OnClick(object sender, RoutedEventArgs e) {
+        _dao.CreateCountry ("Ukraina", "");
+        countries.Items.Refresh ();
     }
 }
