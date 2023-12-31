@@ -13,7 +13,7 @@
             <RowDefinition Height="30px"></RowDefinition>
             <RowDefinition Height="30px"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Margin="10px" FontSize="30px" HorizontalAlignment="Center"> Regions page</Label>
+        <Label Margin="10px" FontSize="30px" HorizontalAlignment="Center"> Regions list</Label>
         <ScrollViewer Grid.Row="1">
             <Grid>
                 <ItemsControl x:Name="regions">
@@ -32,7 +32,7 @@
             </Grid>
         </ScrollViewer>
             
-        <Button Height="25px" Grid.Row="2" Name="New" Click="New_OnClick">Add new country</Button>
-        <Button Height="25px" Grid.Row="3" Name="Return" Click="Return_OnClick">Back to main page</Button>
+        <Button Margin="15px" Height="25px" Grid.Row="2" Name="New" Click="New_OnClick">Add new country</Button>
+        <Button Margin="15px" Height="25px" Grid.Row="3" Name="Return" Click="Return_OnClick">Back to main page</Button>
     </Grid>
 </Window>
