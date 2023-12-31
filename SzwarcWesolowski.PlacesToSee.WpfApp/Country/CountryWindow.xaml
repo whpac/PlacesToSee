@@ -8,25 +8,29 @@
         Title="CountryWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30px"></RowDefinition>
+            <RowDefinition Height="70px"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="30px"></RowDefinition>
             <RowDefinition Height="30px"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Height="25px"> Country page</Label>
-        <ItemsControl x:Name="countries" Grid.Row="1">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}" Margin="15"/>
-                        <TextBlock Text="{Binding FlagUrl}" Margin="15"/>
-                        <Button Click="Edit_OnClick">Edit</Button>
-                        <Button Click="Delete_OnClick">Delete</Button>
-                    </StackPanel>
+        <Label Margin="10px" FontSize="30px" HorizontalAlignment="Center"> Countries page</Label>
+        <ScrollViewer Grid.Row="1">
+            <Grid>
+                <ItemsControl x:Name="countries">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Width="150px" Text="{Binding Name}" Margin="15"/>
+                                <TextBlock Width="150px" Text="{Binding FlagUrl}" Margin="15"/>
+                                <Button Height="25px" Width="50px" Click="Edit_OnClick" Margin="5">Edit</Button>
+                                <Button Height="25px" Width="50px" Click="Delete_OnClick" Margin="5">Delete</Button>
+                            </StackPanel>
                     
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
         <Button Height="25px" Grid.Row="2" Name="New" Click="New_OnClick">Add new country</Button>
         <Button Height="25px" Grid.Row="3" Name="Return" Click="Return_OnClick">Back to main page</Button>
     </Grid>

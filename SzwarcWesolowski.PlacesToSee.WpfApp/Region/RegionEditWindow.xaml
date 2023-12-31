@@ -9,24 +9,25 @@
     <Grid>
         
         <Grid.RowDefinitions>
+            <RowDefinition Height="70px"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100px"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="150px"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <Label >Country Editing Window</Label>
-        <Label Content="Name" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
+        <Label Grid.ColumnSpan="2" Margin="10px" FontSize="30px" HorizontalAlignment="Center">Region Editing Window</Label>
+        <Label FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Content="Name" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Margin="15px" TextWrapping="Wrap" Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
     
-        <Label Content="PhotoUrl" Grid.Row="2" Grid.Column="0"/>
-        <TextBox Text="{Binding PhotoUrl}" Grid.Row="2" Grid.Column="1"/>
-        <Button Content="Cancel" Click="CancelButton_Click" Grid.Row="4" Grid.Column="0"/>
-        <Button Content="Save" Click="SaveButton_Click" Grid.Row="4" Grid.Column="1"/>
+        <Label FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Content="PhotoUrl" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Margin="15px" TextWrapping="Wrap" Text="{Binding PhotoUrl}" Grid.Row="2" Grid.Column="1"/>
+        <Button Margin="15px" Content="Cancel" Click="CancelButton_Click" Grid.Row="4" Grid.Column="0"/>
+        <Button Margin="15px" Content="Save" Click="SaveButton_Click" Grid.Row="4" Grid.Column="1"/>
     </Grid>
+    
 </Window>

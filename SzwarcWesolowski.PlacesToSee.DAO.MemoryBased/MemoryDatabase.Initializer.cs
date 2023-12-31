@@ -10,7 +10,7 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
             var pl = new Country
             {
                 Name = "Polska",
-                FlagUrl = ""
+                FlagUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Flag_of_Poland_%28normative%29.svg/250px-Flag_of_Poland_%28normative%29.svg.png"
             };
             var cs = new Country
             {
