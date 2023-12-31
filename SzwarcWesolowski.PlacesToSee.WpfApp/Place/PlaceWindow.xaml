@@ -33,7 +33,7 @@
                                 <TextBlock Width="100px" Text="{Binding Name}" Margin="15"/>
                                 <TextBlock Width="50px" Text="{Binding PlaceType}" Margin="15"/>
                                 <TextBlock Width="150px" Text="{Binding Location}" Margin="15"/>
-                                <TextBlock Width="100px" Text="{Binding Country.Name}" Margin="15"/>
+                                <Image MaxHeight="50px" MaxWidth="100px" Source="{Binding Country.FlagUrl}" Margin="15"/>
                                 <TextBlock Width="100px" Text="{Binding Region.Name}" Margin="15"/>
                                 <Button Height="25px" Width="50px" Click="Edit_OnClick">Edit</Button>
                                 <Button Height="25px" Width="50px" Click="Delete_OnClick">Delete</Button>

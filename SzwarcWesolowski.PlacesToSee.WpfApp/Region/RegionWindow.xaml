@@ -21,7 +21,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Width="150px" Text="{Binding Name}" Margin="15"/>
-                                <TextBlock Width="150px" Text="{Binding PhotoUrl}" Margin="15"/>
+                                <Image MaxHeight="75px" MaxWidth="150px" Source="{Binding PhotoUrl}" Margin="15"/>
                                 <Button Height="25px" Width="50px" Click="Edit_OnClick">Edit</Button>
                                 <Button Height="25px" Width="50px" Click="Delete_OnClick">Delete</Button>
                             </StackPanel>
