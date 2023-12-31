@@ -27,10 +27,16 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <Label Grid.ColumnSpan="2" Margin="10px" FontSize="30px" HorizontalAlignment="Center">Place Editing Window</Label>
+        <Label Grid.ColumnSpan="2" 
+               Margin="10px" 
+               FontSize="30px" 
+               HorizontalAlignment="Center">Place Editing Window</Label>
         <ScrollViewer Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -42,30 +48,90 @@
                     <ColumnDefinition Width="150px"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label  FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Content="Name" Grid.Row="0" Grid.Column="0"/>
-                <TextBox Margin="15px" TextWrapping="Wrap" Text="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
-    
-                <Label  FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Content="PlaceType" Grid.Row="1" Grid.Column="0"/>
-                <ComboBox Margin="15px" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Source={StaticResource PlaceTypeValues}}" 
+                
+                <Label  Grid.Row="0" Grid.Column="0"
+                        Margin="15px" 
+                        FontWeight="Bold" 
+                        HorizontalAlignment="Right" 
+                        Content="Name"/>
+                <TextBox Grid.Row="0" Grid.Column="1"
+                         Margin="15px" 
+                         Name="NameText" 
+                         TextWrapping="Wrap" 
+                         Text="{Binding Name}"
+                         TextChanged="NameText_OnTextChanged" />
+                <TextBlock Grid.Row="1" Grid.Column="1" 
+                           Margin="15px" 
+                           x:Name="errorName" 
+                           Foreground="Red" />
+                
+                <Label Grid.Row="2" Grid.Column="0"
+                       Margin="15px" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Right" 
+                       Content="PlaceType" />
+                <ComboBox Grid.Row="2" Grid.Column="1" 
+                          Margin="15px" 
+                          ItemsSource="{Binding Source={StaticResource PlaceTypeValues}}" 
                           SelectedItem="{Binding PlaceType}" />
-                <Label  FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0">Latitude</Label>
-                <TextBox Margin="15px" TextWrapping="Wrap" Name="LatitudeText" Grid.Row="2" Grid.Column="1"/>
-                <Label  FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0">Longitude</Label>
-                <TextBox Margin="15px" TextWrapping="Wrap" Name="LongitudeText" Grid.Row="3" Grid.Column="1"/>
-                <Label  FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Grid.Row="4" Grid.Column="0">Country</Label>
-                <ComboBox Margin="15px" Grid.Row="4" Grid.Column="1" 
+                
+                <Label Grid.Row="3" Grid.Column="0"
+                       Margin="15px" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Right" >Latitude</Label>
+                <TextBox Grid.Row="3" Grid.Column="1"
+                         Margin="15px" 
+                         Name="LatitudeText" 
+                         TextWrapping="Wrap" 
+                         TextChanged="LatitudeText_OnTextChanged" />
+                <TextBlock Grid.Row="4" Grid.Column="1" 
+                           Margin="15px" 
+                           x:Name="errorLatitude" 
+                           Foreground="Red" />
+                
+                <Label  Grid.Row="5" Grid.Column="0" 
+                        Margin="15px"
+                        FontWeight="Bold"  
+                        HorizontalAlignment="Right" >Longitude</Label>
+                <TextBox Grid.Row="5" Grid.Column="1" 
+                         Margin="15px" 
+                         Name="LongitudeText" 
+                         TextWrapping="Wrap" 
+                         TextChanged="LongitudeText_OnTextChanged" />
+                <TextBlock Grid.Row="6" Grid.Column="1"
+                           Margin="15px" 
+                           x:Name="errorLongitude" 
+                           Foreground="Red" />
+                
+                <Label Grid.Row="7" Grid.Column="0"
+                       Margin="15px" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Right" >Country</Label>
+                <ComboBox Grid.Row="7" Grid.Column="1" 
+                          Margin="15px" 
                           SelectedItem="{Binding Country}" 
                           DisplayMemberPath="Name"
                           Name="CountryComboBox"/>
-                <Label  FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Grid.Row="5" Grid.Column="0">Region</Label>
-                <ComboBox Margin="15px" Grid.Row="5" Grid.Column="1" 
+                
+                <Label Grid.Row="8" Grid.Column="0"
+                       Margin="15px" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Right" >Region</Label>
+                <ComboBox Grid.Row="8" Grid.Column="1" 
+                          Margin="15px" 
                           SelectedItem="{Binding Region}"
                           DisplayMemberPath="Name"
                           Name="RegionComboBox"/>
             </Grid>
         </ScrollViewer>
         
-        <Button Margin="15px" Content="Cancel" Click="CancelButton_Click" Grid.Row="2" Grid.Column="0"/>
-        <Button Margin="15px" Content="Save" Click="SaveButton_Click" Grid.Row="2" Grid.Column="1"/>
+        <Button Grid.Row="2" Grid.Column="0"
+                Margin="15px" 
+                Content="Cancel" 
+                Click="CancelButton_Click" />
+        <Button Grid.Row="2" Grid.Column="1"
+                Margin="15px"
+                Content="Save"
+                Click="SaveButton_Click"/>
     </Grid>
 </Window>

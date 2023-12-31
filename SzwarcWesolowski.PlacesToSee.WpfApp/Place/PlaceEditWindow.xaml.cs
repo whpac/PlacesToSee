@@ -9,6 +9,9 @@ public partial class PlaceEditWindow : Window {
     private readonly IDAO _dao;
     private IPlace _place;
     private bool _isEditing;
+    private bool _isLatCorrect = true;
+    private bool _isLonCorrect = true;
+    private bool _isNameCorrect = true;
     private IEnumerable<ICountry> CountryList { get; }
     private IEnumerable<IRegion> RegionList { get; }
     private double Longitude { get; set; }
@@ -45,13 +48,27 @@ public partial class PlaceEditWindow : Window {
     }
 
     private void SaveButton_Click(object sender, RoutedEventArgs e) {
-        Latitude = Convert.ToDouble (LatitudeText.Text);
-        Longitude = Convert.ToDouble (LongitudeText.Text);
-        _place.SetLocation (Latitude, Longitude);
-        _dao.AddPlace (_place);
-        var listPage = new PlaceWindow (_dao);
-        listPage.Show ();
-        Close ();
+        if (NameText.Text.Length > 0)
+        {
+            errorName.Text = "";
+            _isNameCorrect = true;
+        }
+        else
+        {
+            errorName.Text = "This field cannot be empty.";
+            _isNameCorrect = false;
+        }
+        if (_isNameCorrect && _isLatCorrect && _isLonCorrect)
+        {
+            Latitude = Convert.ToDouble (LatitudeText.Text);
+            Longitude = Convert.ToDouble (LongitudeText.Text);
+            _place.SetLocation (Latitude, Longitude);
+            _dao.AddPlace (_place);
+            var listPage = new PlaceWindow (_dao);
+            listPage.Show ();
+            Close ();
+        }
+        
     }
 
     private void CancelButton_Click(object sender, RoutedEventArgs e) {
@@ -62,5 +79,53 @@ public partial class PlaceEditWindow : Window {
         var listPage = new PlaceWindow (_dao);
         listPage.Show ();
         Close ();
+    }
+
+    private void NameText_OnTextChanged(object sender, TextChangedEventArgs e) {
+        
+        if (NameText.Text.Length > 0)
+        {
+            // The input is a valid double, clear the error message
+            errorName.Text = "";
+            _isNameCorrect = true;
+        }
+        else
+        {
+            // The input is not a valid double, display an error message
+            errorName.Text = "This field cannot be empty.";
+            _isNameCorrect = false;
+        }
+    }
+
+    private void LatitudeText_OnTextChanged(object sender, TextChangedEventArgs e) {
+        double value;
+        if (double.TryParse(LatitudeText.Text, out value))
+        {
+            // The input is a valid double, clear the error message
+            errorLatitude.Text = "";
+            _isLatCorrect = true;
+        }
+        else
+        {
+            // The input is not a valid double, display an error message
+            errorLatitude.Text = "Please enter a valid number.";
+            _isLatCorrect = false;
+        }
+    }
+
+    private void LongitudeText_OnTextChanged(object sender, TextChangedEventArgs e) {
+        double value;
+        if (double.TryParse(LongitudeText.Text, out value))
+        {
+            // The input is a valid double, clear the error message
+            errorLongitude.Text = "";
+            _isLonCorrect = true;
+        }
+        else
+        {
+            // The input is not a valid double, display an error message
+            errorLongitude.Text = "Please enter a valid number.";
+            _isLonCorrect = false;
+        }
     }
 }
