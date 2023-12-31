@@ -26,7 +26,7 @@
     
         <Label Content="PhotoUrl" Grid.Row="2" Grid.Column="0"/>
         <TextBox Text="{Binding PhotoUrl}" Grid.Row="2" Grid.Column="1"/>
-    
+        <Button Content="Cancel" Click="CancelButton_Click" Grid.Row="4" Grid.Column="0"/>
         <Button Content="Save" Click="SaveButton_Click" Grid.Row="4" Grid.Column="1"/>
     </Grid>
 </Window>
