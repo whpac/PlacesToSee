@@ -85,13 +85,11 @@ public partial class PlaceEditWindow : Window {
         
         if (NameText.Text.Length > 0)
         {
-            // The input is a valid double, clear the error message
             errorName.Text = "";
             _isNameCorrect = true;
         }
         else
         {
-            // The input is not a valid double, display an error message
             errorName.Text = "This field cannot be empty.";
             _isNameCorrect = false;
         }
@@ -101,13 +99,11 @@ public partial class PlaceEditWindow : Window {
         double value;
         if (double.TryParse(LatitudeText.Text, out value))
         {
-            // The input is a valid double, clear the error message
             errorLatitude.Text = "";
             _isLatCorrect = true;
         }
         else
         {
-            // The input is not a valid double, display an error message
             errorLatitude.Text = "Please enter a valid number.";
             _isLatCorrect = false;
         }
@@ -117,13 +113,11 @@ public partial class PlaceEditWindow : Window {
         double value;
         if (double.TryParse(LongitudeText.Text, out value))
         {
-            // The input is a valid double, clear the error message
             errorLongitude.Text = "";
             _isLonCorrect = true;
         }
         else
         {
-            // The input is not a valid double, display an error message
             errorLongitude.Text = "Please enter a valid number.";
             _isLonCorrect = false;
         }

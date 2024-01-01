@@ -5,7 +5,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:sys="clr-namespace:System;assembly=System.Runtime"
         xmlns:core="clr-namespace:SzwarcWesolowski.PlacesToSee.Core;assembly=SzwarcWesolowski.PlacesToSee.Core"
-        xmlns:local="clr-namespace:SzwarcWesolowski.PlacesToSee.WpfApp.Place"
         mc:Ignorable="d"
         Title="PlaceEditWindow" Height="450" Width="800">
     <Window.Resources>
@@ -35,12 +34,12 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
@@ -61,7 +60,7 @@
                          Text="{Binding Name}"
                          TextChanged="NameText_OnTextChanged" />
                 <TextBlock Grid.Row="1" Grid.Column="1" 
-                           Margin="15px" 
+                           Margin="15px 1px 15px 5px" 
                            x:Name="errorName" 
                            Foreground="Red" />
                 
@@ -85,7 +84,7 @@
                          TextWrapping="Wrap" 
                          TextChanged="LatitudeText_OnTextChanged" />
                 <TextBlock Grid.Row="4" Grid.Column="1" 
-                           Margin="15px" 
+                           Margin="15px 1px 15px 5px" 
                            x:Name="errorLatitude" 
                            Foreground="Red" />
                 
@@ -99,7 +98,7 @@
                          TextWrapping="Wrap" 
                          TextChanged="LongitudeText_OnTextChanged" />
                 <TextBlock Grid.Row="6" Grid.Column="1"
-                           Margin="15px" 
+                           Margin="15px 1px 15px 5px" 
                            x:Name="errorLongitude" 
                            Foreground="Red" />
                 

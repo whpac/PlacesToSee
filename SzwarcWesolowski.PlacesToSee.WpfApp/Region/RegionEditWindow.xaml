@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:SzwarcWesolowski.PlacesToSee.WpfApp.Region"
         mc:Ignorable="d"
         Title="RegionEditWindow" Height="450" Width="800">
     <Grid>
@@ -11,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70px"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="100px"></RowDefinition>
         </Grid.RowDefinitions>
@@ -20,14 +19,45 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <Label Grid.ColumnSpan="2" Margin="10px" FontSize="30px" HorizontalAlignment="Center">Region Editing Window</Label>
-        <Label FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Content="Name" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Margin="15px" TextWrapping="Wrap" Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
+        <Label Grid.ColumnSpan="2" 
+               Margin="10px" 
+               FontSize="30px" 
+               HorizontalAlignment="Center">Region Editing Window</Label>
+        
+        <Label Grid.Row="1" Grid.Column="0" 
+               Margin="15px" 
+               FontWeight="Bold" 
+               HorizontalAlignment="Right" 
+               Content="Name"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 Margin="15px" 
+                 Name="NameText"
+                 TextWrapping="Wrap" 
+                 Text="{Binding Name}"
+                 TextChanged="NameText_OnTextChanged" />
+        <TextBlock Grid.Row="2" Grid.Column="1"
+                   Margin="15px 1px 15px 5px" 
+                   x:Name="errorName" 
+                   Foreground="Red" />
     
-        <Label FontWeight="Bold" Margin="15px" HorizontalAlignment="Right" Content="PhotoUrl" Grid.Row="2" Grid.Column="0"/>
-        <TextBox Margin="15px" TextWrapping="Wrap" Text="{Binding PhotoUrl}" Grid.Row="2" Grid.Column="1"/>
-        <Button Margin="15px" Content="Cancel" Click="CancelButton_Click" Grid.Row="4" Grid.Column="0"/>
-        <Button Margin="15px" Content="Save" Click="SaveButton_Click" Grid.Row="4" Grid.Column="1"/>
+        <Label Grid.Row="3" Grid.Column="0"
+               Margin="15px" 
+               FontWeight="Bold" 
+               HorizontalAlignment="Right"
+               Content="PhotoUrl"/>
+        <TextBox Grid.Row="3" Grid.Column="1"
+                 Margin="15px" 
+                 TextWrapping="Wrap" 
+                 Text="{Binding PhotoUrl}"/>
+        
+        <Button Grid.Row="4" Grid.Column="0"
+                Margin="15px" 
+                Content="Cancel" 
+                Click="CancelButton_Click" />
+        <Button Grid.Row="4" Grid.Column="1"
+                Margin="15px"
+                Content="Save"
+                Click="SaveButton_Click"/>
     </Grid>
     
 </Window>

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using SzwarcWesolowski.PlacesToSee.Interfaces;
 
 namespace SzwarcWesolowski.PlacesToSee.WpfApp.Country;
@@ -7,6 +8,7 @@ public partial class CountryEditWindow : Window {
     private readonly IDAO _dao;
     private ICountry _country;
     private bool _isEditing;
+    private bool _isNameCorrect = true;
     public CountryEditWindow(ICountry? country, IDAO dao) {
         _dao = dao;
         
@@ -28,10 +30,25 @@ public partial class CountryEditWindow : Window {
     }
 
     private void SaveButton_Click(object sender, RoutedEventArgs e) {
-        _dao.AddCountry (_country);
-        var countryPage = new CountryWindow (_dao);
-        countryPage.Show ();
-        Close ();
+        if (NameText.Text.Length > 0)
+        {
+            errorName.Text = "";
+            _isNameCorrect = true;
+        }
+        else
+        {
+            errorName.Text = "This field cannot be empty.";
+            _isNameCorrect = false;
+        }
+
+        if (_isNameCorrect)
+        {
+            _dao.AddCountry (_country);
+            var countryPage = new CountryWindow (_dao);
+            countryPage.Show ();
+            Close ();
+        }
+        
     }
     
     private void CancelButton_Click(object sender, RoutedEventArgs e) {
@@ -42,5 +59,18 @@ public partial class CountryEditWindow : Window {
         var listPage = new CountryWindow (_dao);
         listPage.Show ();
         Close ();
+    }
+
+    private void NameText_OnTextChanged(object sender, TextChangedEventArgs e) {
+        if (NameText.Text.Length > 0)
+        {
+            errorName.Text = "";
+            _isNameCorrect = true;
+        }
+        else
+        {
+            errorName.Text = "This field cannot be empty.";
+            _isNameCorrect = false;
+        }
     }
 }
