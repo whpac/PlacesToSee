@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.BLC\SzwarcWesolowski.PlacesToSee.BLC.csproj" />
     <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.Core\SzwarcWesolowski.PlacesToSee.Core.csproj" />
-    <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.DAO.EntityFramework\SzwarcWesolowski.PlacesToSee.DAO.EntityFramework.csproj" />
     <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.Interfaces\SzwarcWesolowski.PlacesToSee.Interfaces.csproj" />
   </ItemGroup>
 

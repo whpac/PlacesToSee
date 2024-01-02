@@ -1,9 +1,14 @@
+using SzwarcWesolowski.PlacesToSee.BLC;
+
 namespace SzwarcWesolowski.PlacesToSee.WebApp
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            var daoPath = @"SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.dll";
+            ExternalDAOManager.Initialize(daoPath);
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

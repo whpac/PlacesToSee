@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-using EF = SzwarcWesolowski.PlacesToSee.DAO.EntityFramework;
+using SzwarcWesolowski.PlacesToSee.BLC;
 using SzwarcWesolowski.PlacesToSee.Interfaces;
 using SzwarcWesolowski.PlacesToSee.WebApp.Models;
 
@@ -13,7 +13,7 @@ namespace SzwarcWesolowski.PlacesToSee.WebApp.Controllers
 
         public CountriesController()
         {
-            _context = new EF.EntityFrameworkDatabase();
+            _context = ExternalDAOManager.GetDAOInstance();
         }
 
         // GET: Countries

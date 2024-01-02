@@ -12,7 +12,6 @@
     <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.Interfaces\SzwarcWesolowski.PlacesToSee.Interfaces.csproj" />
     
     <!-- TODO: Remove such references -->
-    <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.DAO.MemoryBased\SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.csproj" />
   </ItemGroup>
 
 </Project>
