@@ -17,6 +17,7 @@ namespace SzwarcWesolowski.PlacesToSee.Interfaces
         void RemovePlace(IPlace item);
         IRegion CreateRegion();
         IRegion CreateRegion(string name);
+        IRegion CreateRegion(string name, string photoUrl);
         void AddRegion(IRegion item);
         void RemoveRegion(IRegion item);
         ICountry CreateCountry();
@@ -25,5 +26,9 @@ namespace SzwarcWesolowski.PlacesToSee.Interfaces
         void AddCountry(ICountry item);
 
         void RemoveCountry(ICountry item);
+
+        void UpdateCountry(ICountry item);
+        void UpdatePlace(IPlace item);
+        void UpdateRegion(IRegion item);
     }
 }

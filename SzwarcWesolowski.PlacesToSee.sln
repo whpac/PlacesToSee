@@ -5,15 +5,19 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.WpfApp", "SzwarcWesolowski.PlacesToSee.WpfApp\SzwarcWesolowski.PlacesToSee.WpfApp.csproj", "{7F254D5F-1A9B-4230-A8E6-F7DC9C97364C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.Core", "SzwarcWesolowski.PlacesToSee.Core\SzwarcWesolowski.PlacesToSee.Core.csproj", "{54B84BE4-4441-41D3-9BB9-ACF3203E0AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzwarcWesolowski.PlacesToSee.Core", "SzwarcWesolowski.PlacesToSee.Core\SzwarcWesolowski.PlacesToSee.Core.csproj", "{54B84BE4-4441-41D3-9BB9-ACF3203E0AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.Interfaces", "SzwarcWesolowski.PlacesToSee.Interfaces\SzwarcWesolowski.PlacesToSee.Interfaces.csproj", "{9AE04628-1F4F-4BEE-97AC-25B846DE264B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzwarcWesolowski.PlacesToSee.Interfaces", "SzwarcWesolowski.PlacesToSee.Interfaces\SzwarcWesolowski.PlacesToSee.Interfaces.csproj", "{9AE04628-1F4F-4BEE-97AC-25B846DE264B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.BLC", "SzwarcWesolowski.PlacesToSee.BLC\SzwarcWesolowski.PlacesToSee.BLC.csproj", "{8294DD0B-D4BD-4855-8AEA-2B705CC53453}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzwarcWesolowski.PlacesToSee.BLC", "SzwarcWesolowski.PlacesToSee.BLC\SzwarcWesolowski.PlacesToSee.BLC.csproj", "{8294DD0B-D4BD-4855-8AEA-2B705CC53453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.DAO.MemoryBased", "SzwarcWesolowski.PlacesToSee.DAO.MemoryBased\SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.csproj", "{3C0425C1-A683-483F-A0D7-B38AAD04872A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzwarcWesolowski.PlacesToSee.DAO.MemoryBased", "SzwarcWesolowski.PlacesToSee.DAO.MemoryBased\SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.csproj", "{3C0425C1-A683-483F-A0D7-B38AAD04872A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.ConsoleApp", "SzwarcWesolowski.PlacesToSee.ConsoleApp\SzwarcWesolowski.PlacesToSee.ConsoleApp.csproj", "{A114829C-DB64-4FD4-9B4B-54DE4962BB60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzwarcWesolowski.PlacesToSee.ConsoleApp", "SzwarcWesolowski.PlacesToSee.ConsoleApp\SzwarcWesolowski.PlacesToSee.ConsoleApp.csproj", "{A114829C-DB64-4FD4-9B4B-54DE4962BB60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.WebApp", "SzwarcWesolowski.PlacesToSee.WebApp\SzwarcWesolowski.PlacesToSee.WebApp.csproj", "{9A2061DE-747A-49C6-A3DB-04196C1D0D39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzwarcWesolowski.PlacesToSee.DAO.EntityFramework", "SzwarcWesolowski.PlacesToSee.DAO.EntityFramework\SzwarcWesolowski.PlacesToSee.DAO.EntityFramework.csproj", "{39679471-2C2A-4032-A28B-028A39FDA53D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{A114829C-DB64-4FD4-9B4B-54DE4962BB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A114829C-DB64-4FD4-9B4B-54DE4962BB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A114829C-DB64-4FD4-9B4B-54DE4962BB60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A2061DE-747A-49C6-A3DB-04196C1D0D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A2061DE-747A-49C6-A3DB-04196C1D0D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A2061DE-747A-49C6-A3DB-04196C1D0D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A2061DE-747A-49C6-A3DB-04196C1D0D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39679471-2C2A-4032-A28B-028A39FDA53D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39679471-2C2A-4032-A28B-028A39FDA53D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39679471-2C2A-4032-A28B-028A39FDA53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39679471-2C2A-4032-A28B-028A39FDA53D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

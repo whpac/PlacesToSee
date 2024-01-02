@@ -2,7 +2,8 @@
 {
     public interface ICountry
     {
-        string Name { get; }
-        string FlagUrl { get; }
+        int Id { get; }
+        string Name { get; set; }
+        string FlagUrl { get; set; }
     }
 }

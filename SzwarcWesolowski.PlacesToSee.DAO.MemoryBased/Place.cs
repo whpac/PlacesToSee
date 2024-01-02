@@ -5,6 +5,8 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
 {
     internal record Place : IPlace
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public PlaceType PlaceType { get; set; }
@@ -14,9 +16,5 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
         public ICountry Country { get; set; }
 
         public IRegion Region { get; set; }
-
-        public void SetLocation(double lat, double lon) {
-            Location = new Coordinates (lat, lon);
-        }
     }
 }

@@ -1,16 +1,15 @@
-﻿using System.Reflection.PortableExecutable;
-using SzwarcWesolowski.PlacesToSee.Core;
+﻿using SzwarcWesolowski.PlacesToSee.Core;
 
 namespace SzwarcWesolowski.PlacesToSee.Interfaces
 {
     public interface IPlace
     {
-        string Name { get; }
-        PlaceType PlaceType { get; }
-        Coordinates Location { get; }
+        int Id { get; set; }
+        string Name { get; set; }
+        PlaceType PlaceType { get; set; }
+        Coordinates Location { get; set; }
 
-        ICountry Country { get; }
-        IRegion Region { get; }
-        void SetLocation(double lat, double lon);
+        ICountry Country { get; set; }
+        IRegion Region { get; set; }
     }
 }

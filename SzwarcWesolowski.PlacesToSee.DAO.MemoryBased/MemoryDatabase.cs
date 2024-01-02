@@ -50,10 +50,20 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
         public IRegion CreateRegion(string name) {
             var item = new Region
             {
-            Name = name, 
-            PhotoUrl = ""
+                Name = name, 
+                PhotoUrl = ""
             };
             _regions.Add (item);
+            return item;
+        }
+        public IRegion CreateRegion(string name, string photoUrl)
+        {
+            var item = new Region
+            {
+                Name = name,
+                PhotoUrl = photoUrl
+            };
+            _regions.Add(item);
             return item;
         }
 
@@ -82,5 +92,9 @@ namespace SzwarcWesolowski.PlacesToSee.DAO.MemoryBased
         public void RemoveCountry(ICountry item) {
             _countries.Remove ((Country) item);
         }
+
+        public void UpdateCountry(ICountry item) { }
+        public void UpdatePlace(IPlace item) { }
+        public void UpdateRegion(IRegion item) { }
     }
 }

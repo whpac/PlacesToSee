@@ -2,8 +2,8 @@
 {
     public interface IRegion
     {
-        string Name { get; }
-        string PhotoUrl { get; }
-        
+        int Id { get; }
+        string Name { get; set; }
+        string PhotoUrl { get; set; }
     }
 }

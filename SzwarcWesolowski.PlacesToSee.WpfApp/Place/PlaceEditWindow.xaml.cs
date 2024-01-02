@@ -62,7 +62,7 @@ public partial class PlaceEditWindow : Window {
         {
             Latitude = Convert.ToDouble (LatitudeText.Text);
             Longitude = Convert.ToDouble (LongitudeText.Text);
-            _place.SetLocation (Latitude, Longitude);
+            _place.Location = new(Latitude, Longitude);
             _dao.AddPlace (_place);
             var listPage = new PlaceWindow (_dao);
             listPage.Show ();
