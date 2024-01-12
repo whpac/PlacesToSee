@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.BLC\SzwarcWesolowski.PlacesToSee.BLC.csproj" />
-    <ProjectReference Include="..\SzwarcWesolowski.PlacesToSee.DAO.MemoryBased\SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.csproj" />
   </ItemGroup>
 
   <ItemGroup>

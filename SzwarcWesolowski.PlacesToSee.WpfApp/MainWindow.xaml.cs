@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Configuration;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,7 +23,7 @@ namespace SzwarcWesolowski.PlacesToSee.WpfApp
         private IDAO _dao;
         public MainWindow()
         {
-            var daoPath = @"SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.dll";
+            var daoPath = ConfigurationManager.AppSettings["DaoPath"];
             if (! ExternalDAOManager.IsInitialized)
             {
                 ExternalDAOManager.Initialize(daoPath);

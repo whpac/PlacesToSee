@@ -6,9 +6,6 @@ namespace SzwarcWesolowski.PlacesToSee.WebApp
     {
         public static void Main(string[] args)
         {
-            var daoPath = @"SzwarcWesolowski.PlacesToSee.DAO.MemoryBased.dll";
-            ExternalDAOManager.Initialize(daoPath);
-
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -34,6 +31,9 @@ namespace SzwarcWesolowski.PlacesToSee.WebApp
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            var daoPath = app.Configuration["AppSettings:DaoPath"];
+            ExternalDAOManager.Initialize(daoPath);
 
             app.Run();
         }
